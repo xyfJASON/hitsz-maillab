@@ -13,7 +13,6 @@ char buf[MAX_SIZE+1];
 
 void recv_mail()
 {
-    const char* end_msg = "\n.\n";
     const char* host_name = ""; // TODO: Specify the mail server domain name
     const unsigned short port = 110; // POP3 server port
     const char* user = ""; // TODO: Specify the user
@@ -47,7 +46,6 @@ void recv_mail()
     }
     buf[r_size] = '\0'; // Do not forget the null terminator
     printf("%s", buf);
-    }
 
     // TODO: Send user and password and print server response
 

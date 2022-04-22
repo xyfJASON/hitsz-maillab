@@ -19,7 +19,7 @@ char buf[MAX_SIZE+1];
 // att_path: path to the attachment
 void send_mail(const char* receiver, const char* subject, const char* msg, const char* att_path)
 {
-    const char* end_msg = "\n.\n";
+    const char* end_msg = "\r\n.\r\n";
     const char* host_name = ""; // TODO: Specify the mail server domain name
     const unsigned short port = 25; // SMTP server port
     const char* user = ""; // TODO: Specify the user
