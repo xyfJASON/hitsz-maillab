@@ -52,8 +52,8 @@ void recv_mail()
 {
     const char* host_name = "pop.qq.com"; // TODO: Specify the mail server domain name
     const unsigned short port = 110; // POP3 server port
-    const char* user = "xyfjason@qq.com"; // TODO: Specify the user
-    const char* pass = ""; // TODO: Specify the password
+    const char* user = "***@qq.com"; // TODO: Specify the user
+    const char* pass = "***"; // TODO: Specify the password
     char dest_ip[16];
     int s_fd; // socket file descriptor
     struct hostent *host;
@@ -113,9 +113,15 @@ void recv_mail()
 
     // TODO: Retrieve the first mail and print its content
     sendmy(s_fd, "RETR 1\r\n", 8, 0, "send RETR", 1);
-    recvmy(s_fd, buf, MAX_SIZE, 0, "recv RETR");
+    r_size = recvmy(s_fd, buf, MAX_SIZE, 0, "recv RETR");
     checkmy(buf, "+OK", "check RETR");
-
+    int total_size = atoi(buf + 4);
+    total_size -= r_size;
+    while(total_size > 0){
+        r_size = recvmy(s_fd, buf, MAX_SIZE, 0, "recv RETR");
+        total_size -= r_size;
+    }
+    
     // TODO: Send QUIT command and print server response
     sendmy(s_fd, "QUIT\r\n", 6, 0, "send QUIT", 1);
     recvmy(s_fd, buf, MAX_SIZE, 0, "recv QUIT");

@@ -7,11 +7,11 @@
 - 使用 STMP 协议与邮件服务器交互，将邮件发送给任意收件人。
 - 使用 POP3 协议与服务器交互，查询收件箱中的邮件信息。
 
-<br/>
+
 
 ## Send your emails
 
-1. 在 `send.c` 文件中更改 `host_name`、`user`、`pass`、`from` 为邮件服务器名称（如 `smtp.qq.com`）、你的邮箱（如 `xyfjason@qq.com`）、你的授权码（请自行在邮箱设置中获取）和发件人邮箱。
+1. 在 `send.c` 文件中更改 `host_name`、`user`、`pass`、`from` 为邮件服务器名称（如 `smtp.qq.com`）、你的邮箱（如 `username@qq.com`）、你的授权码（请自行在邮箱设置中获取）和发件人邮箱。
 
 2. 编译程序：
 
@@ -37,13 +37,13 @@
 
    - `ATTACHMENT`：邮件附件，只支持一个附件
 
-<br/>
+
 
 ## Receive your emails
 
 邮件收取功能相对固定，将按顺序执行以下操作：查看邮件总数和总大小，列出所有邮件和它们的大小，展示第一封邮件的内容。
 
-1. 在 `recv.c` 文件中更改 `host_name`、`user`、`pass` 为邮件服务器名称（如 `pop.qq.com`）、你的邮箱（如 `xyfjason@qq.com`）、你的授权码（请自行在邮箱设置中获取）。
+1. 在 `recv.c` 文件中更改 `host_name`、`user`、`pass` 为邮件服务器名称（如 `pop.qq.com`）、你的邮箱（如 `username@qq.com`）、你的授权码（请自行在邮箱设置中获取）。
 
 2. 编译程序：
 
